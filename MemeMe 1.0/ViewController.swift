@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVKit
 class ViewController: UIViewController , UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate{
     
     @IBOutlet weak var Nav: UINavigationBar!
@@ -17,8 +17,10 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate,UINavig
     @IBOutlet weak var cameraItem: UIBarButtonItem!
     @IBOutlet weak var TheImage: UIImageView!
     @IBOutlet weak var Share: UIBarButtonItem!
+    
     var ToptextHasDefulatValue = true
     var BottomtextHasDefulatValue = true
+    
     struct Meme{
         let topText : String?
         let bottomText : String?
@@ -51,6 +53,15 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate,UINavig
         topTextField.text = "TOP"
         BottomTextField.text = "BOTTOM"
         
+        //The Camera button is disabled when app is run on devices without a camera, such as the simulator.
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+
+            cameraItem.isEnabled = true
+        }
+        else {
+
+             cameraItem.isEnabled = false
+        }
         
     }
     
