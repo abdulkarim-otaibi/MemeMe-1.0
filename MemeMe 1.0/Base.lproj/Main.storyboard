@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLa-RN-tKk">
-                                <rect key="frame" x="0.0" y="676" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="752" width="375" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Vlj-Fg-fdN"/>
@@ -38,24 +38,24 @@
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLG-Sg-vhB">
-                                <rect key="frame" x="0.0" y="44" width="414" height="632"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="664"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNs-D8-Gq0">
-                                <rect key="frame" x="20" y="123" width="374" height="17"/>
+                                <rect key="frame" x="20" y="141" width="335" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9G-Qh-e6l">
-                                <rect key="frame" x="20" y="563" width="374" height="17"/>
+                                <rect key="frame" x="20" y="682" width="335" height="17"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7h-Gi-Ezr">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <items>
                                     <navigationItem id="eZJ-az-QEx">
                                         <barButtonItem key="leftBarButtonItem" image="square.and.arrow.up" catalog="system" id="Pcb-LL-btI">
@@ -76,20 +76,20 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="CNs-D8-Gq0" secondAttribute="trailing" constant="20" id="3t9-cy-XeJ"/>
                             <constraint firstItem="yLa-RN-tKk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7ha-Kl-QPW"/>
-                            <constraint firstItem="x9G-Qh-e6l" firstAttribute="top" secondItem="yLG-Sg-vhB" secondAttribute="bottom" constant="-113" id="7ql-Ne-lyZ"/>
+                            <constraint firstItem="x9G-Qh-e6l" firstAttribute="top" secondItem="yLG-Sg-vhB" secondAttribute="bottom" constant="-70" id="7ql-Ne-lyZ"/>
                             <constraint firstItem="Q7h-Gi-Ezr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EEH-3L-Vpi"/>
                             <constraint firstItem="CNs-D8-Gq0" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fxx-ay-sZz"/>
                             <constraint firstItem="yLa-RN-tKk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GWy-vZ-3JU"/>
                             <constraint firstItem="yLG-Sg-vhB" firstAttribute="top" secondItem="Q7h-Gi-Ezr" secondAttribute="bottom" id="MJ5-Do-iYg"/>
-                            <constraint firstItem="x9G-Qh-e6l" firstAttribute="leading" secondItem="CNs-D8-Gq0" secondAttribute="leading" id="Mjj-29-JZK"/>
                             <constraint firstAttribute="bottom" secondItem="yLa-RN-tKk" secondAttribute="bottom" constant="10" id="Q0X-Ee-RGm"/>
                             <constraint firstItem="Q7h-Gi-Ezr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SZP-dR-oXU"/>
                             <constraint firstItem="yLG-Sg-vhB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Too-1f-ksT"/>
+                            <constraint firstItem="x9G-Qh-e6l" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hAB-Uj-TtT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="x9G-Qh-e6l" secondAttribute="trailing" constant="20" id="hLf-GW-WLV"/>
                             <constraint firstItem="yLa-RN-tKk" firstAttribute="top" secondItem="yLG-Sg-vhB" secondAttribute="bottom" id="iIP-V0-Aql"/>
-                            <constraint firstItem="yLG-Sg-vhB" firstAttribute="top" secondItem="CNs-D8-Gq0" secondAttribute="bottom" constant="-96" id="jPP-Yx-5To"/>
+                            <constraint firstItem="yLG-Sg-vhB" firstAttribute="top" secondItem="CNs-D8-Gq0" secondAttribute="bottom" constant="-70" id="jPP-Yx-5To"/>
                             <constraint firstItem="yLG-Sg-vhB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lKq-hq-3Em"/>
                             <constraint firstItem="Q7h-Gi-Ezr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pdt-tF-jSP"/>
-                            <constraint firstItem="x9G-Qh-e6l" firstAttribute="trailing" secondItem="CNs-D8-Gq0" secondAttribute="trailing" id="zjy-O9-7je"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

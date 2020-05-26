@@ -21,6 +21,12 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate,UINavig
     var ToptextHasDefulatValue = true
     var BottomtextHasDefulatValue = true
     
+    let memeTextAttributes: [NSAttributedString.Key: Any] = [
+              NSAttributedString.Key.strokeColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
+              NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
+              NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+              NSAttributedString.Key.strokeWidth:  -2
+          ]
     struct Meme{
         let topText : String?
         let bottomText : String?
@@ -35,23 +41,11 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate,UINavig
         // add tag to TextFields
         topTextField.tag = 0
         BottomTextField.tag = 1
-        let memeTextAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.strokeColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
-            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
-            NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSAttributedString.Key.strokeWidth:  -2
-        ]
-        // add the Attributes to TextFields
-        topTextField.defaultTextAttributes = memeTextAttributes
-        BottomTextField.defaultTextAttributes = memeTextAttributes
-        // make the text center
-        topTextField.textAlignment = .center
-        BottomTextField.textAlignment = .center
-        topTextField.delegate = self
-        BottomTextField.delegate = self
-        // set defualt text
-        topTextField.text = "TOP"
-        BottomTextField.text = "BOTTOM"
+      
+        
+        configureMemeTextField(textField: topTextField, text: "TOP")
+        configureMemeTextField(textField: BottomTextField, text: "BOTTOM")
+        
         
         //The Camera button is disabled when app is run on devices without a camera, such as the simulator.
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -66,7 +60,12 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate,UINavig
     }
     
     
-    
+    func configureMemeTextField(textField: UITextField, text: String) {
+          textField.text = text
+          textField.delegate = self
+          textField.defaultTextAttributes = memeTextAttributes
+          textField.textAlignment = .center
+      }
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
@@ -157,12 +156,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate,UINavig
     }
    //pick a image from photoLibrary
     @IBAction func pick(_ sender: Any) {
-        
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-  
-        present(imagePicker, animated: true, completion: nil)
+      pickAnImage(sourceType: .photoLibrary)
     }
     
     
@@ -176,13 +170,14 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate,UINavig
     }
     //pick a image from camera
     @IBAction func camera(_ sender: Any) {
-        
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        
-        present(imagePicker, animated: true, completion: nil)
+        pickAnImage(sourceType: .camera)
     }
+    func pickAnImage(sourceType: UIImagePickerController.SourceType) {
+         let imagePickerController = UIImagePickerController()
+         imagePickerController.delegate = self
+         imagePickerController.sourceType = sourceType
+         present(imagePickerController, animated: true, completion: nil)
+     }
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
